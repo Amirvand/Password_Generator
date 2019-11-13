@@ -25,3 +25,5 @@ The user will be prompted to choose from the following password criteria:
   * Lowercase characters
 
   * Uppercase characters
+
+As a bonus, the user should also have the option to click a button to copy the password to their clipboard.
