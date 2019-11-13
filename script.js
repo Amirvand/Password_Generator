@@ -9,26 +9,13 @@ var symbols = ["`~!@#$%^&*()-_=+[}{]';:.>,</?|"]
 //Array of Special Symbols
 var specialSymbols = ["ÇübéâäàåçêëèïîìæÆôöòûùÿ¢£¥ƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†‡ˆ‰Š‹Œ™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞãðõ÷øüýþ"]
 
-function generateRandomPassword (passwordLength) {
-  var outputPassword = "";
-  var allPossibleChars  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+-=";
-  for (var i = 0; i < passwordLength; i++) {
-      outputPassword += allPossibleChars.charAt(Math.floor(Math.random() * allPossibleChars.length));
+document.getElementById("slider").oninput = function(){
+
+  if(document.getElementById("slider").value > 0){
+      document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
   }
-  return outputPassword;
-}
+  else{
+      document.getElementById("length").innerHTML = "Length: 8";
+  }
 
-function myFunction() {
-  var copyText = document.getElementById("output");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied: " + copyText.value;
-}
-
-function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy to clipboard";
 }
