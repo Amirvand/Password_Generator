@@ -1,13 +1,13 @@
-//Array of lowercase characters
-var lowercase = ["abcdefghijklmnopqrstuvwxyz"]
-//Array of uppercase characters
-var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
-//Array of Numbers
-var numbers = ["01234566789"]
-//Array of Symbols
-var symbols = ["`~!@#$%^&*()-_=+[}{]';:.>,</?|"]
-//Array of Special Symbols
-var specialSymbols = ["ÇübéâäàåçêëèïîìæÆôöòûùÿ¢£¥ƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†‡ˆ‰Š‹Œ™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞãðõ÷øüýþ"]
+// //Array of lowercase characters
+// var lowercase = ["abcdefghijklmnopqrstuvwxyz"]
+// //Array of uppercase characters
+// var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+// //Array of Numbers
+// var numbers = ["01234566789"]
+// //Array of Symbols
+// var symbols = ["`~!@#$%^&*()-_=+[}{]';:.>,</?|"]
+// //Array of Special Symbols
+// var specialSymbols = ["ÇübéâäàåçêëèïîìæÆôöòûùÿ¢£¥ƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†‡ˆ‰Š‹Œ™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞãðõ÷øüýþ"]
 
 function generate(){
   //set length to the password
@@ -33,10 +33,4 @@ document.getElementById("slider").oninput = function(){
   else{
       document.getElementById("length").innerHTML = "Length: 8";
   }
-}
-
-function copyPassword(){
-  document.getElementById("display").select();
-  document.execCommand("Copy");
-  alert("Password copied to clipboard!");
 }
