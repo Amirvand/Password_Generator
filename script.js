@@ -1,11 +1,13 @@
 //Array of lowercase characters
-var lowercase = ["abcdefghijklmnopqrstuvwxyz"]
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 //Array of uppercase characters
-var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+//Array of Numbers
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 //Array of Symbols
-var symbols = ["`~!@#$%^&*()-_=+[}{]';:.>,</?\|"]
+var symbols = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "}", "{", "]", "'", ";", ":", ".", ">", ",", "<", "/", "?", "|"]
 //Array of Special Symbols
-var specialSymbols = ["ÇüéâäàåçêëèïîìæÆôöòûùÿ¢£¥ƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†‡ˆ‰Š‹Œ™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞãðõ÷øüýþ"]
+var specialSymbols = ["Ç","ü", "b", "é", "â", "äàåçêëèïîìæÆôöòûùÿ¢£¥ƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†‡ˆ‰Š‹Œ™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞãðõ÷øüýþ"]
 
 function () {
     var length = parseInt(prompt(
@@ -26,42 +28,20 @@ function () {
       alert("Your password length is too long, please pick a password length that is below 129 characters.");
       return;
     }
-
-    var hasSpecialCharacters = confirm(
-      "Click OK to confirm including special characters."
-    );
-
-    var hasNumericCharacters = confirm(
-      "Click OK to confirm including numeric characters."
-    );
-
-    var hasLowerCasedCharacters = confirm(
-      "Click OK to confirm including lowercase characters."
-    );
-  
-    var hasUpperCasedCharacters = confirm(
-      "Click OK to confirm including uppercase characters."
-    );
-  
-    // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
-    if (
-      hasSpecialCharacters === false &&
-      hasNumericCharacters === false &&
-      hasLowerCasedCharacters === false &&
-      hasUpperCasedCharacters === false
-    ) {
-      alert("Must select at least one character type");
-      return;
-    }
-  
-    // Object to store user input
-    var passwordOptions = {
-      length: length,
-      hasSpecialCharacters: hasSpecialCharacters,
-      hasNumericCharacters: hasNumericCharacters,
-      hasLowerCasedCharacters: hasLowerCasedCharacters,
-      hasUpperCasedCharacters: hasUpperCasedCharacters
-    };
   
     return passwordOptions;
   }
+
+  // Function for getting a random element from an array
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randElement = arr[randIndex];
+
+  return randElement;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to copy button
+copyBtn.addEventListener("click", copyToClipboard);
