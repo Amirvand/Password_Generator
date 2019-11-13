@@ -5,16 +5,13 @@
     padding: 20px;
     width: 100%;
 }
-#display{
+#pass{
     width: 100%;
 }
-#slider{
+#MinMaxslider{
     width: 100%;
 }
 #length{
     display: inline-block;
     width: 100px;
-}
-.previous_passwords{
-    margin-bottom: 20px;
 }

@@ -17,11 +17,12 @@
           <div class="content">
             <h4><center>Random Password Generator</center></h4>
             <br />
-              <input type="text" id="display">
+              <input type="text" id="pass">
             <br />
-              <input type="range" min="8" max="128" name="slider" id="slider">
+              <input type="range" min="8" max="128" name="MinMaxslider" id="MinMaxslider">
             <br />
-            <center><button onclick="generate()">Generate</button></center>
+            <center><button onclick="generate()">Generate Password</button>
+            <button onclick="copyPassword()">Copy Password</button></center>
             <div id="length"></div>
           </div>
         </div>

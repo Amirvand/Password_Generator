@@ -1,3 +1,6 @@
+//This can all be useful if I ever plan to go back and add checkboxes instead of having 1 set value with EVERYTHING in it.
+//Can make it so it rolls a random number between X & Y, depending on what the user checks off.
+//That roll will determine which array, roll again to pick the number in the array. Repeat until you hit the requested pass size.
 // //Array of lowercase characters
 // var lowercase = ["abcdefghijklmnopqrstuvwxyz"]
 // //Array of uppercase characters
@@ -11,7 +14,7 @@
 
 function generate(){
   //set length to the password
-  let difficulty = document.getElementById("slider").value;
+  let difficulty = document.getElementById("MinMaxslider").value;
   //possible password values
   let values = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()-_=+[}{]';:.>,</?|ÇübéâäàåçêëèïîìæÆôöòûùÿ¢£¥ƒáíóúñÑ¿¬½¼¡«»¦ßµ±°•·²€„…†‡ˆ‰Š‹Œ™š›œŸ¨©®¯³´¸¹¾ÀÁÂÃÄÅÈÉÊËÌÍÎÏÐÒÓÔÕÖ×ØÙÚÛÜÝÞãðõ÷øüýþ";
   let password = "";
@@ -19,18 +22,23 @@ function generate(){
   for(var i = 0; i <= difficulty; i++){
       password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
   }
-  //add password to textbox/display area
-  document.getElementById("display").value = password;
-  //add password to previously generated passwords section
-  document.getElementById("lastNums").innerHTML += password + "<br />";
+  //adds password to textbox
+  document.getElementById("pass").value = password;
 }
 
-// Was a copy and paste to get the slider to work, uncertain on what values need to be set
-document.getElementById("slider").oninput = function(){
-  if(document.getElementById("slider").value > 0){
-      document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
+//Slider functionality, Min : 8 , Max : 128 . 
+document.getElementById("MinMaxslider").oninput = function(){
+  if(document.getElementById("MinMaxslider").value > 0){
+      document.getElementById("length").innerHTML = "Length: " + document.getElementById("MinMaxslider").value;
   }
   else{
       document.getElementById("length").innerHTML = "Length: 8";
   }
+}
+
+//Ability to copy password
+function copyPassword(){
+  document.getElementById("pass").select();
+  document.execCommand("Copy");
+  alert("Your new password has been copied!");
 }
